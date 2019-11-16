@@ -19,8 +19,8 @@ struct LogStore {
   static func writeLog() {
     DispatchQueue.global(qos: .background).async {
       do {
-        let data = JSONEncoder().encode(log)
-        data.write(to: FileManager.documentsURL, options: .atomicWrite)
+        let data = try JSONEncoder().encode(log)
+        try data.write(to: FileManager.documentsURL, options: .atomicWrite)
       } catch {
         print("error: \(error)")
       }
