@@ -31,7 +31,7 @@ struct LogStore {
 extension FileManager {
   static var documentsURL: URL {
     guard let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { fatalError() }
-    return url
+    return url.appendingPathComponent("log")
   }
 }
 
