@@ -5,12 +5,13 @@
 import Foundation
 
 struct LogStore {
-  static var log: [String] = []
+  static var log: [LogItem] = []
 }
 
 public func printLog(_ string: String) {
   print(string)
   
-  LogStore.log.append(string)
+  let logItem = LogItem(date: Date(), text: string)
+  LogStore.log.append(logItem)
 }
 

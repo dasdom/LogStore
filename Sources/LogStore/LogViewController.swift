@@ -7,6 +7,12 @@ import UIKit
 public class LogViewController : UITableViewController {
 
   let logItems = LogStore.log
+  let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeStyle = .short
+    dateFormatter.dateStyle = .none
+    return dateFormatter
+  }()
   
   public override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,7 +36,9 @@ public class LogViewController : UITableViewController {
       
       let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
                                                for: indexPath)
-      cell.textLabel?.text = logItems[indexPath.row]
+      
+      let logItem = logItems[indexPath.row]
+      cell.textLabel?.text = "(\(dateFormatter.string(from: logItem.date))) \(logItem.text)"
       cell.textLabel?.numberOfLines = 0
       
       return cell
