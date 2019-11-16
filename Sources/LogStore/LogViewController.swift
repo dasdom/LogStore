@@ -13,6 +13,7 @@ public class LogViewController : UITableViewController {
     
     tableView.register(UITableViewCell.self,
                        forCellReuseIdentifier: "Cell")
+    tableView.separatorStyle = .none
   }
   
   // MARK: - UITableViewDataSource
