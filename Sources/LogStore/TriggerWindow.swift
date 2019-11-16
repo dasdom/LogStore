@@ -13,6 +13,8 @@ public class TriggerWindow : UIWindow {
 
     super.init(frame: frame)
 
+    LogStore.setupLog()
+    
     motionManager.startAccelerometerUpdates(to: OperationQueue.main) {
       [unowned self] data, error in
 

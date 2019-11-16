@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct LogItem {
+struct LogItem : Codable {
   let date: Date
   let text: String
 }

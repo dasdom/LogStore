@@ -4,13 +4,13 @@
 
 import UIKit
 
-public class LogViewController : UITableViewController {
+class LogViewController : UITableViewController {
 
   let logItems = LogStore.log
   let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.timeStyle = .short
-    dateFormatter.dateStyle = .none
+    dateFormatter.dateStyle = .short
     return dateFormatter
   }()
   
