@@ -30,6 +30,7 @@ public class LogViewController : UITableViewController {
       let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
                                                for: indexPath)
       cell.textLabel?.text = logItems[indexPath.row]
+      cell.textLabel?.numberOfLines = 0
       
       return cell
   }
