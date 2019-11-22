@@ -8,7 +8,7 @@ struct LogStore {
   static var log: [LogItem] = []
   
   static func setupLog() {
-    guard let data = try Data(contentsOf: FileManager.documentsURL) else {
+    guard let data = try? Data(contentsOf: FileManager.documentsURL) else {
       return
     }
     if let potentialLog = try? JSONDecoder().decode([LogItem].self, from: data) {
