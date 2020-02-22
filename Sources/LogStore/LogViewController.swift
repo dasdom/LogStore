@@ -6,7 +6,8 @@ import UIKit
 
 class LogViewController : UITableViewController {
 
-  let logItems = LogStore.log
+  let logItems = LogStore.log.reversed()
+  
   let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.timeStyle = .short
